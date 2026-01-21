@@ -1,9 +1,11 @@
 package jp.co.sss.crud.bean;
 
+import java.io.Serializable;
+
 /**
  * 
  */
-public class LoginResultBean {
+public class LoginResultBean implements Serializable{
 
 	/**
 	 * ログイン判定

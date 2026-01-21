@@ -1,6 +1,6 @@
 package jp.co.sss.crud.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,12 +13,12 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "table")
+@Table(name = "employee")
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_emp_gen")
 	@SequenceGenerator(name = "seq_emp_gen", sequenceName = "seq_emp", allocationSize = 1)
-	private Integer empid;
+	private Integer empId;
 	@Column
 	private String empPass;
 	@Column
@@ -35,11 +35,11 @@ public class Employee {
 	@JoinColumn(name = "dept_id", referencedColumnName = "deptId")
 	private Department department;
 	
-	public Integer getEmpid() {
-		return empid;
+	public Integer getEmpId() {
+		return empId;
 	}
-	public void setEmpid(Integer empid) {
-		this.empid = empid;
+	public void setEmpId(Integer empid) {
+		this.empId = empid;
 	}
 	public String getEmpPass() {
 		return empPass;

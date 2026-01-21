@@ -1,5 +1,6 @@
 package jp.co.sss.crud.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  * @version 1.0
  * @since 1.0
  */
-public class EmployeeBean {
+public class EmployeeBean implements Serializable{
 
 	/** 従業員ID */
 	private Integer empId;

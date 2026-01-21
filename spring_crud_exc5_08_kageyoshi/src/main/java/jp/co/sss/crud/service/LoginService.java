@@ -3,9 +3,12 @@ package jp.co.sss.crud.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import jp.co.sss.crud.bean.EmployeeBean;
 import jp.co.sss.crud.bean.LoginResultBean;
+import jp.co.sss.crud.entity.Employee;
 import jp.co.sss.crud.form.LoginForm;
 import jp.co.sss.crud.repository.EmployeeRepository;
+import jp.co.sss.crud.util.BeanManager;
 
 /**
  * ログイン認証処理を行うサービスクラス。
@@ -45,11 +48,15 @@ public class LoginService {
 	 *         </ul>
 	 */
 	//TODO ここに記述
-	public LoginForm execute(LoginForm loginForm) {
-		if() {
-		return LoginResultBean
+	public LoginResultBean execute(LoginForm loginForm) {
+		Employee login = repository.findByEmpIdAndEmpPass(loginForm.getEmpId(), loginForm.getEmpPass());
+		if(login == null) {
+			return LoginResultBean.failLogin("社員ID、またはパスワードが間違っています。");
 		}else {
-			return LoginResultBean
+			EmployeeBean employeeBean = BeanManager.copyEntityToBean(login);
+			return LoginResultBean.succeedLogin(employeeBean);
+			
 		}
 		
+}
 }

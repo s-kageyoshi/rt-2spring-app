@@ -38,7 +38,7 @@ public class ListController {
 
 		List<EmployeeBean> allEmployeeList = null;
 		//TODO SearchAllEmployeesService完成後にコメントを外す
-		//		allEmployeeList = searchAllEmployeesService.execute();
+				allEmployeeList = searchAllEmployeesService.execute();
 
 		model.addAttribute("employees", allEmployeeList);
 		return "list/list";
@@ -58,7 +58,7 @@ public class ListController {
 		List<EmployeeBean> searchByEmpNameList = null;
 
 		//TODO SearchForEmployeesByEmpNameService完成後にコメントを外す
-		//		searchByEmpNameList = searchForEmployeesByEmpNameService.execute(empName);
+				searchByEmpNameList = searchForEmployeesByEmpNameService.execute(empName);
 
 		model.addAttribute("employees", searchByEmpNameList);
 		return "list/list";
@@ -78,7 +78,7 @@ public class ListController {
 		List<EmployeeBean> searchByDepartmentList = null;
 
 		//TODO SearchForEmployeesByDepartmentService完成後にコメントを外す
-		//		searchByDepartmentList=searchForEmployeesByDepartmentService.execute(deptId);
+				searchByDepartmentList=searchForEmployeesByDepartmentService.execute(deptId);
 
 		model.addAttribute("employees", searchByDepartmentList);
 		return "list/list";

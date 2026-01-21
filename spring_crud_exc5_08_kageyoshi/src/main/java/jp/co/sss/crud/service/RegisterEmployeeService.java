@@ -1,6 +1,12 @@
 package jp.co.sss.crud.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import jp.co.sss.crud.entity.Employee;
+import jp.co.sss.crud.form.EmployeeForm;
+import jp.co.sss.crud.repository.EmployeeRepository;
+import jp.co.sss.crud.util.BeanManager;
 
 /**
  * 従業員登録サービスクラス。
@@ -19,7 +25,8 @@ public class RegisterEmployeeService {
 	 * Spring DIによって自動注入されます。
 	 */
 	//TODO ここに記述
-
+	@Autowired
+	EmployeeRepository repository;
 	/**
 	 * 新規従業員を登録します。
 	 * 
@@ -30,5 +37,9 @@ public class RegisterEmployeeService {
 	 * @param employeeForm 登録する従業員情報を格納したフォームオブジェクト
 	 */
 	//TODO ここに記述
-
+	public void execute(EmployeeForm employeeForm) {
+		Employee regEmp = BeanManager.copyFormToEntity(employeeForm);
+		repository.save(regEmp);
+		
+	}
 }
