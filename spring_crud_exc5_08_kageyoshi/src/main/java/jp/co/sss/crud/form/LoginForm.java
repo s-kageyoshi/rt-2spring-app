@@ -4,7 +4,6 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 
 public class LoginForm {
 	/** 社員ID */
@@ -14,7 +13,6 @@ public class LoginForm {
 
 	/** パスワード */
 	@NotBlank
-	@Size(max = 16)
 	@Pattern(regexp = "^[a-zA-Z0-9]{0,16}$")
 	private String empPass;
 

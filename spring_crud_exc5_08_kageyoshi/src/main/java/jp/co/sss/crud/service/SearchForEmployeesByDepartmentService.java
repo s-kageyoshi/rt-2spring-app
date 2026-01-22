@@ -44,6 +44,7 @@ public class SearchForEmployeesByDepartmentService {
 	//TODO ここに記述
 	public List<EmployeeBean> execute(Integer deptId){
 		Department department = new Department();
+		department.setDeptId(deptId);
 		List<Employee> employeeByDept = repository.findByDepartmentOrderByEmpId(department);
 		return BeanManager.copyEntityListToBeanList(employeeByDept);
 		
