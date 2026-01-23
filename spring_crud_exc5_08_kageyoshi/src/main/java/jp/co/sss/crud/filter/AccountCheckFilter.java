@@ -10,8 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jp.co.sss.crud.bean.EmployeeBean;
 
-
-public class LoginCheckFilter extends HttpFilter{
+public class AccountCheckFilter extends HttpFilter{
 	
 	@Override
 	public void doFilter(
@@ -24,21 +23,23 @@ public class LoginCheckFilter extends HttpFilter{
 			requestURL.indexOf("/templates/") != -1 ||
 			requestURL.endsWith("/") ||
 			requestURL.endsWith("/login") ||
-			requestURL.endsWith("/logout")){
+			requestURL.endsWith("/logout") ||
+			requestURL.endsWith("/list")) {
 			chain.doFilter(request, response);
 			
 		}else {
+			
 			HttpSession session = request.getSession();
 			EmployeeBean loginUser = (EmployeeBean) session.getAttribute("loginUser");
 			
-			if(loginUser == null) {
+			if(loginUser.getAuthority() != 2) {
 				response.sendRedirect("/spring_crud/");
 				return;
 				
 			}else {
+				
 				chain.doFilter(request, response);
 			}
 		}
 	}
-
 }
