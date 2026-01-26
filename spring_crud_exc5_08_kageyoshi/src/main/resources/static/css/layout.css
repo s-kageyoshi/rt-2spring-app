@@ -11,7 +11,7 @@ body {
 .content {
 	display: flex;
 	flex-direction: row;
-	justify-content:space-between;
+	justify-content: space-between;
 	width: 920px;
 	margin: 0px auto;
 }
@@ -24,11 +24,14 @@ body {
 header {
 	height: 60px;
 	width: 100%;
-	background-color: #87CEEB;
+	background-color: rgb(255, 238, 119);
 	padding-top: 10px;
 }
 
 header .title {
+	font-family: "Zen Maru Gothic", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 	margin-left: 10px;
 	line-height: 45px;
 	font-size: 25pt;
@@ -50,7 +53,7 @@ aside {
 }
 
 aside .title {
-	background-color: #add8e6;
+	background-color: rgb(255, 227, 34);
 	margin: 5px 0px 10px 10px;
 	padding: 3px;
 	font-weight: bold;
@@ -78,7 +81,7 @@ aside input[type=submit] {
 
 /* ---- メイン ---- */
 article {
-	
+
 	width: 700px;
 	padding-left: 20px;
 }
@@ -87,9 +90,8 @@ article {
 /* ---- フッター ---- */
 footer {
 	height: 30px;
-	background-color: #87CEEB;
+	background-color: rgb(255, 238, 119);
 	text-align: center;
 	font-size: 8pt;
 	line-height: 30px;
 }
-

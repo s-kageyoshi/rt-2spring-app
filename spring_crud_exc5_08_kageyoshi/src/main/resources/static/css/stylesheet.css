@@ -4,7 +4,7 @@
 
 /* ---- 文字の色 ---- */
 body {
-	color: #12526d;
+	color: rgb(0, 128, 0);
 }
 
 /* ---- ページタイトル ---- */
@@ -22,7 +22,7 @@ div.regist_link {
 /* ---- 社員情報一覧テーブル ---- */
 table {
 	background-color: #FFFFFF;
-	border-color: #87CEEB;
+	border-color: rgb(175, 97, 97);
 	border-width: 1px;
 	border-style: solid;
 	border-collapse: collapse;
@@ -32,7 +32,7 @@ table {
 table td, table th {
 	border-width: 1px;
 	border-style: solid;
-	border-color: #87CEEB;
+	border-color: rgb(175, 97, 97);
 }
 
 td.data {
