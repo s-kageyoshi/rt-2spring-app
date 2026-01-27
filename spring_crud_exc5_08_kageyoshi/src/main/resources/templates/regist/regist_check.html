@@ -53,7 +53,7 @@
 					<input type="hidden" th:field="*{birthday}" />
 					<input type="hidden" th:field="*{authority}" />
 					<input type="hidden" th:field="*{deptId}" />
-					<input type="submit" value="登録" />
+					<input type="submit" value="登録" onclick="return registCheck()"/>
 				</div>
 			</div>
 		</form>
@@ -74,5 +74,13 @@
 			</div>
 		</form>
 	</div>
+	<script>
+		function registCheck(){
+			var ret = confirm("データを登録します。よろしいですか？");
+			if(!ret){
+				return ret;
+			}
+		}
+	</script>
 </body>
 </html>

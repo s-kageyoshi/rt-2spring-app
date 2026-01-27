@@ -58,7 +58,7 @@
 					<input type="hidden" th:field="*{birthday}" />
 					<input type="hidden" th:field="*{authority}" />
 					<input type="hidden" th:field="*{deptId}" />
-					<input type="submit" value="変更" />
+					<input type="submit" value="変更" onclick="return updateCheck()" />
 				</div>
 			</div>
 		</form>
@@ -79,6 +79,14 @@
 			</div>
 		</form>
 	</div>
+	<script>
+		function updateCheck() {
+			var ret = confirm("データを変更します。本当によろしいですか？");
+			if (!ret) {
+				return ret;
+			}
+		}
+	</script>
 </body>
 
 </html>
