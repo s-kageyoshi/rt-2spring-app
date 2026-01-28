@@ -9,4 +9,7 @@ public class Constant {
 
     /** 部署IDの初期値 */
     public static final Integer DEFAULT_DEPT_ID = 1;
+    
+    /** ITパスポート所持状況の初期値 */
+    public static final Integer DEFALUT_IT_PASS = 2;
 }

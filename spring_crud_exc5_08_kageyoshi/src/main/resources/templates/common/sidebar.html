@@ -35,6 +35,14 @@
 	     <input type="submit" value="検索" />
 	    </form>
 	  </div>
+	  <div class="title">ITパスポート所持状況</div>
+	  <div class="form">
+		  <form th:action="@{/list/itPass}" method="get">
+			<input type="radio" name="itPass" value="1"checked />所持&nbsp;
+			<input type="radio" name="itPass" value="2" />未所持
+			<input type="submit" value="検索" />
+		  </form>
+	  </div>
 	</aside>
 </body>
 </html>

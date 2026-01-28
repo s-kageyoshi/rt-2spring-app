@@ -32,6 +32,7 @@
 			<th class="birthday">生年月日</th>
 			<th class="authority">権限</th>
 			<th class="deptName">部署名</th>
+			<th class="itPass">ITパスポート</th>
 			<th class="button">変更</th>
 			<th class="button">削除</th>
 		</tr>
@@ -51,6 +52,9 @@
 				<span th:case="1">一般</span> <span th:case="2">管理者</span>
 			</td>
 			<td th:text="${employee.deptName}"></td>
+			<td th:switch="${employee.itPass}">
+				<span th:case="1">所持</span> <span th:case="2">未所持</span>
+			</td>
 			<td>
 				<form method="get" th:action="@{/update/input}">
 					<input type="hidden" name="empId" th:value="${employee.empId}" />

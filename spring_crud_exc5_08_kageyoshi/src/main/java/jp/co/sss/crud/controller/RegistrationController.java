@@ -29,6 +29,7 @@ public class RegistrationController {
 		employeeForm.setGender(Constant.DEFAULT_GENDER);
 		employeeForm.setAuthority(Constant.DEFAULT_AUTHORITY);
 		employeeForm.setDeptId(Constant.DEFAULT_DEPT_ID);
+		employeeForm.setItPass(Constant.DEFALUT_IT_PASS);
 
 		return "regist/regist_input";
 	}

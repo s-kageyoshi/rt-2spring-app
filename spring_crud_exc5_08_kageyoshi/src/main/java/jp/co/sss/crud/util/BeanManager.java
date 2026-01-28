@@ -31,6 +31,7 @@ public class BeanManager {
 		form.setBirthday(bean.getBirthday());
 		form.setAuthority(bean.getAuthority());
 		form.setDeptId(bean.getDeptId());
+		form.setItPass(bean.getItPass());
 
 		return form;
 	}
@@ -65,6 +66,7 @@ public class BeanManager {
 		String deptName = getDeptName(form.getDeptId());
 
 		employeeBean.setDeptName(deptName);
+		employeeBean.setItPass(form.getItPass());
 
 		return employeeBean;
 
@@ -99,6 +101,8 @@ public class BeanManager {
 		Department department = new Department();
 		department.setDeptId(form.getDeptId());
 		employee.setDepartment(department);
+		
+		employee.setItPass(form.getItPass());
 
 		return employee;
 
@@ -154,6 +158,7 @@ public class BeanManager {
 			employeeBean.setBirthday(employee.getBirthday());
 			employeeBean.setAuthority(employee.getAuthority());
 			employeeBean.setDeptId(employee.getDepartment().getDeptId());
+			employeeBean.setItPass(employee.getItPass());
 
 			tempEmployeeBeans.add(employeeBean);
 
@@ -174,6 +179,7 @@ public class BeanManager {
 		employeeBean.setBirthday(employee.getBirthday());
 		employeeBean.setAuthority(employee.getAuthority());
 		employeeBean.setDeptId(employee.getDepartment().getDeptId());
+		employeeBean.setItPass(employee.getItPass());
 
 		return employeeBean;
 	}

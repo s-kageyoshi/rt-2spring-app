@@ -39,7 +39,9 @@ public class EmployeeBean implements Serializable{
 
 	/** 部署名 */
 	private String deptName;
-
+	
+	/** ITパスポート所持状況 */
+	private Integer itPass;
 	/**
 	 * デフォルトコンストラクタ。
 	 * 全てのフィールドがnullまたはデフォルト値で初期化されます。
@@ -59,9 +61,10 @@ public class EmployeeBean implements Serializable{
 	 * @param birthday 誕生日
 	 * @param authority 権限レベル
 	 * @param deptId 部署ID（1:営業部、2:経理部、3:総務部）
+	 * @param itPass ITパスポート所持状況
 	 */
 	public EmployeeBean(Integer empId, String empPass, String empName, Integer gender, String address, Date birthday,
-			Integer authority, Integer deptId) {
+			Integer authority, Integer deptId,Integer itPass) {
 		this.empId = empId;
 		this.empPass = empPass;
 		this.empName = empName;
@@ -70,6 +73,7 @@ public class EmployeeBean implements Serializable{
 		this.birthday = birthday;
 		this.authority = authority;
 		this.deptId = deptId;
+		this.itPass = itPass;
 
 		switch (deptId) {
 		case 1:
@@ -271,5 +275,21 @@ public class EmployeeBean implements Serializable{
 
 		this.deptName = deptName;
 	}
-
+	/**
+	 * ITパスポート所持状況を取得します。
+	 * 
+	 * @return ITパスポート所持状況
+	 */
+	public Integer getItPass() {
+		return itPass;
+	}
+	/**
+	 * ITパスポート所持状況を設定します。
+	 * 
+	 *@param itPass ITパスポート所持状況
+	 */
+	public void setItPass(Integer itPass) {
+		this.itPass = itPass;
+	}
+	
 }

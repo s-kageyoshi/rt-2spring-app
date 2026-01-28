@@ -45,6 +45,13 @@
 				<span th:case="1">営業部</span> <span th:case="2">経理部</span> <span th:case="3">総務部</span>
 			</div>
 		</div>
+		<div class="form">
+			<div class="label">ITパスポート：</div>
+			<div class="input" th:switch="${employeeForm.itPass}">
+				<span th:case="1">所持</span>
+				<span th:case="2">未所持</span>
+			</div>
+		</div>
 		<form th:action="@{/update/complete}" method="post" th:object="${employeeForm}" name="check">
 			<!-- ↑追加箇所 -->
 			<div class="form">
@@ -58,6 +65,7 @@
 					<input type="hidden" th:field="*{birthday}" />
 					<input type="hidden" th:field="*{authority}" />
 					<input type="hidden" th:field="*{deptId}" />
+					<input type="hidden" th:field="*{itPass}"/>
 					<input type="submit" value="変更" onclick="return updateCheck()" />
 				</div>
 			</div>
@@ -74,6 +82,7 @@
 					<input type="hidden" th:field="*{birthday}" />
 					<input type="hidden" th:field="*{authority}" />
 					<input type="hidden" th:field="*{deptId}" />
+					<input type="hidden" th:field="*{itPass}"/>
 					<input type="submit" value="戻る" />
 				</div>
 			</div>

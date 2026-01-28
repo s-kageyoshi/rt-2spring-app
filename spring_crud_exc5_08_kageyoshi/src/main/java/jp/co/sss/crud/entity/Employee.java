@@ -34,6 +34,8 @@ public class Employee {
 	@ManyToOne
 	@JoinColumn(name = "dept_id", referencedColumnName = "deptId")
 	private Department department;
+	@Column
+	private Integer itPass;
 	
 	public Integer getEmpId() {
 		return empId;
@@ -83,7 +85,12 @@ public class Employee {
 	public void setDepartment(Department department) {
 		this.department = department;
 	}
-	
+	public Integer getItPass() {
+		return itPass;
+	}
+	public void setItPass(Integer itPass) {
+		this.itPass = itPass;
+	}
 	
 	
 }

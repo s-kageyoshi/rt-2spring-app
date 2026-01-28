@@ -13,6 +13,7 @@ import jp.co.sss.crud.bean.EmployeeBean;
 import jp.co.sss.crud.service.SearchAllEmployeesService;
 import jp.co.sss.crud.service.SearchForEmployeesByDepartmentService;
 import jp.co.sss.crud.service.SearchForEmployeesByEmpNameService;
+import jp.co.sss.crud.service.SearchForEmployeesByItPassService;
 
 @Controller
 public class ListController {
@@ -25,6 +26,9 @@ public class ListController {
 
 	@Autowired
 	SearchForEmployeesByDepartmentService searchForEmployeesByDepartmentService;
+	
+	@Autowired
+	SearchForEmployeesByItPassService searchForEmployeesByItPassService;
 
 	/**
 	 * 社員情報を全件検索した結果を出力
@@ -78,9 +82,23 @@ public class ListController {
 		List<EmployeeBean> searchByDepartmentList = null;
 
 		//TODO SearchForEmployeesByDepartmentService完成後にコメントを外す
-				searchByDepartmentList=searchForEmployeesByDepartmentService.execute(deptId);
+				searchByDepartmentList = searchForEmployeesByDepartmentService.execute(deptId);
 
 		model.addAttribute("employees", searchByDepartmentList);
+		return "list/list";
+	}
+	
+	/**
+	 * 社員情報をITパスポート所持状況で検索した結果を出力
+	 */
+	@RequestMapping(path = "/list/itPass", method = RequestMethod.GET)
+	public String findByItpass(Integer itPass, Model model) {
+		
+		List<EmployeeBean> searchByItpassList = null;
+		
+				searchByItpassList = searchForEmployeesByItPassService.execute(itPass);
+				
+		model.addAttribute("employees", searchByItpassList);
 		return "list/list";
 	}
 }

@@ -40,6 +40,9 @@ public class EmployeeForm {
 
 	/** 部署ID */
 	private Integer deptId;
+	
+	/** ITパスポート所持状況 */
+	private Integer itPass;
 
 	/**
 	 * 社員IDの取得
@@ -192,4 +195,24 @@ public class EmployeeForm {
 	public void setDeptId(Integer deptId) {
 		this.deptId = deptId;
 	}
+	
+	/**
+	 * ITパスポート所持状況の取得
+	 * 
+	 * @return ITパスポート所持状況
+	 */
+	public Integer getItPass() {
+		return itPass;
+	}
+	
+	/**
+	 * ITパスポート所持状況のセット
+	 * 
+	 *@param itPass
+	 *           ITパスポート所持状況
+	 */
+	public void setItPass(Integer itPass) {
+		this.itPass = itPass;
+	}
+	
 }
